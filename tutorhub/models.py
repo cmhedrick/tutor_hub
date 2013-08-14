@@ -2,6 +2,41 @@ from django.db import models
 
 # Create your models here.
 
+APT_TIME = (
+    ("B1", 'Block 1'),
+    ("B2", 'Block 2'),
+    ("B3", 'Block 3'),
+    ("B4", 'Block 4'),
+    ("A", 'A Lunch'),
+    ("B", 'B Lunch'),
+    ("C", 'C Lunch'),
+    ("Eagle Time Workshop", 'Eagle TIme Workshop'),
+    ("After School Thursday", 'After School Thursday'),
+    ("Other: Special Workshop", 'Other: Special Workshop'),
+    ("Other: After School", 'Other: After School')
+)
+
+GRADE = (
+    ("9", 'Ninth Grade'),
+    ("10", 'Tenth Grade'),
+    ("11", 'Eleventh Grade'),
+    ("12", 'Twelfth Grade')
+)
+
+VISITED = (
+    ("Never.", 'Never.'),
+    ("Yes, but not this school year.", 'Yes, but not this school year.'),
+    ("Yes, I have been here already this school year.", 'Yes, I have been here already this school year.'),
+)
+
+REASON_VISITED = (
+    ("It was teacher required.", 'It was teacher required.'),
+    ("My teacher offered extra credit.", 'My teacher offered extra credit.'),
+    ("I have been here before and found it useful.", 'I have been here before and found it useful.'),
+    ("I heard about it and wanted to give it a try.", 'I heard about it and wanted to give it a try.'),
+    ("I am rewriting and resubmitting an essay.", 'I am rewriting and resubmitting an essay.'),
+)
+
 class Tutor(models.Model):
     tutor_email = models.CharField(max_length=100)
     first_name = models.CharField(max_length=25)
@@ -15,10 +50,9 @@ class Student(models.Model):
     first_name = models.CharField(max_length=25)
     last_name = models.CharField(max_length=25)
     phone = models.CharField(max_length=15)
-    grade = models.CharField(max_length=2)
-    visited = models.BooleanField()
+    grade = models.CharField(max_length=2, choices=GRADE)
     email = models.CharField(max_length=100)
-    regular_teacher = models.CharField(max_length=35)
+    teacher = models.CharField(max_length=35)
 
 class Session(models.Model):
     student_id = models.CharField(max_length=35)
@@ -26,7 +60,11 @@ class Session(models.Model):
     building = models.CharField(max_length=25)
     room = models.CharField(max_length=4)
     topic = models.CharField(max_length=25)
-    assignments = models.CharField(max_length=100)
+    assignment = models.CharField(max_length=100)
+    grade = models.CharField(max_length=2, choices=GRADE)  
+    apt_time = models.CharField(max_length=25, choices=APT_TIME)
+    reason_visited = models.CharField(max_length=50, choices=REASON_VISITED)
+    visited = models.CharField(max_length=50, choices=VISITED)
 
 class Expertise(models.Model):
     tutor_email = models.CharField(max_length=100)
@@ -42,5 +80,5 @@ class Availability(models.Model):
     class Meta:
         verbose_name_plural = "Availabilities"
 
-class EmailAuth(models.Model):
+class Email_Authentication(models.Model):
     tutor_email = models.CharField(max_length=100)
