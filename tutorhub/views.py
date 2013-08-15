@@ -10,3 +10,9 @@ from tutorhub import models
 class SessionList(generic.ListView):
     model = models.Session
 
+class SessionForm(generic.FormView):
+    class Meta:
+        model = models.Session
+
+class AddSession(generic.CreateView):
+    form_model = SessionForm

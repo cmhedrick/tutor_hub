@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Session Form{% endblock %}
+{% block content %}
+{% if form.errors %}
+<p style="color: red">Please correct the items marked in red below.</p>
+{% endif %}
+<form action="" method="POST" >
+  {% csrf_token %}
+  <table>
+    {% for field in form %}
+    <tr>
+      <td>{{ field.label_tag }}</td>
+      <td>{{ field }}</td>
+    </tr>
+    {% if field.errors %}
+    <tr>
+      <td colspan='2' style="color: red">{{ field.errors }}</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
+  <input type="submit" name="submit" value="Submit" />
+</form>
+{% endblock %}
+
