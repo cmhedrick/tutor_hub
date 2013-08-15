@@ -7,7 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='index.html')),
+    url(r'^$', TemplateView.as_view(template_name='base.html')),
     # Examples:
     # url(r'^$', 'tutorsite.views.home', name='home'),
     # url(r'^tutorsite/', include('tutorsite.foo.urls')),
