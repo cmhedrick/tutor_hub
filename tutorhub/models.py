@@ -56,6 +56,8 @@ class Student(models.Model):
 
 class Session(models.Model):
     student_id = models.CharField(max_length=35)
+    first_name = models.CharField(max_length=25)
+    last_name = models.CharField(max_length=25)
     date = models.DateField()
     building = models.CharField(max_length=25)
     room = models.CharField(max_length=4)
