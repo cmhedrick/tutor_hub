@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
@@ -6,6 +7,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', TemplateView.as_view(template_name='index.html')),
     # Examples:
     # url(r'^$', 'tutorsite.views.home', name='home'),
     # url(r'^tutorsite/', include('tutorsite.foo.urls')),
