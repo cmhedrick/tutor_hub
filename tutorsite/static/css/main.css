@@ -71,3 +71,6 @@ fieldset {
 input#id_password  {
     margin-left: 7px;
 }
+.form-actions a {
+    color: #000;
+}

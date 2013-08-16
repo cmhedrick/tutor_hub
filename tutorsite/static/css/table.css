@@ -1,0 +1,10 @@
+table {
+    text-align: center;
+    border-spacing: 20px;
+}
+#tablehead {
+    font-size: 25px;
+}
+th {
+    font-size: 17px;
+}
