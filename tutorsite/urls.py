@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^students/$', TemplateView.as_view(template_name='students.html')),
     url(r'^teachers/$', TemplateView.as_view(template_name='teachers.html')),
     url(r'^write/$', TemplateView.as_view(template_name='write.html')),
+    url(r'^visit/$', TemplateView.as_view(template_name='visit.html')),
     # Examples:
     # url(r'^$', 'tutorsite.views.home', name='home'),
     # url(r'^tutorsite/', include('tutorsite.foo.urls')),
