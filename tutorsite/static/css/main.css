@@ -51,3 +51,6 @@ header {
 .content {
     margin: 20px;
 }
+.left a, a:visited {
+    text-decoration: none;
+}

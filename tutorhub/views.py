@@ -16,3 +16,7 @@ class SessionForm(generic.FormView):
 
 class AddSession(generic.CreateView):
     form_model = SessionForm
+    model = models.Session
+
+    def get_success_url(self):
+        return '/'

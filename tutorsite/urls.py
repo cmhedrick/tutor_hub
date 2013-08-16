@@ -8,6 +8,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^who/$', TemplateView.as_view(template_name='who.html')),
+    url(r'^students/$', TemplateView.as_view(template_name='students.html')),
+    url(r'^teachers/$', TemplateView.as_view(template_name='teachers.html')),
+    url(r'^write/$', TemplateView.as_view(template_name='write.html')),
     # Examples:
     # url(r'^$', 'tutorsite.views.home', name='home'),
     # url(r'^tutorsite/', include('tutorsite.foo.urls')),

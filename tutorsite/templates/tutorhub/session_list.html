@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Post List{% endblock %}
+{% block content %}
 <table>
   <tr><th colspan="11">Sessions</th></tr>
     <tr><th>Student ID</th><th>First Name</th><th>Last Name</th><th>Grade</th><th>Date</th><th>Time</th><th>Building</th><th>Room #</th><th>Topic</th><th>Assignment</th><th>Have you visited us before?</th><th>Why are you visiting today?</th></tr>
@@ -5,3 +8,4 @@
     <tr><td>{{session.student_id}}</td><td>{{session.first_name}}</td><td>{{session.last_name}}</td><td>{{session.grade}}</td><td>{{session.date}}</td><td>{{session.apt_time}}</td><td>{{session.building}}</td><td>{{session.room}}</td><td>{{session.topic}}</td><td>{{session.assignment}}</td><td>{{session.visited}}</td><td>{{session.reason_visited}}</td></tr>
     {% endfor %}
 </table>
+{% endblock %}
