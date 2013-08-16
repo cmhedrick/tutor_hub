@@ -16,7 +16,11 @@
         <div class="right">
             <a href="/tutorhub/sessionform">Sign Up</a>
             <span>|</span>
-            <a href="#">Log In</a>
+            {% if user.is_authenticated %}
+            <a href="/tutorhub/logout">{{user.username}}</a>
+            {% else %}
+            <a href="/tutorhub/login">Log In</a>
+            {% endif %}
         </div>
     </header>
   <nav>

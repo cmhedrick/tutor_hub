@@ -1,5 +1,6 @@
 from django.views import generic
 from django import forms
+from registration import *
 from django.utils import timezone
 from django.http import HttpResponseRedirect
 

@@ -1,13 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 from django.conf import settings
+from tutorhub import views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^$', views.SessionList.as_view()),
     url(r'^who/$', TemplateView.as_view(template_name='who.html')),
     url(r'^students/$', TemplateView.as_view(template_name='students.html')),
     url(r'^teachers/$', TemplateView.as_view(template_name='teachers.html')),
