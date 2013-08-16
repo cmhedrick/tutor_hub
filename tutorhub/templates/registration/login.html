@@ -15,12 +15,14 @@
       <fieldset>
         <label>Username:</label>
         {{ form.username }}
+      </fieldset>
+      <fieldset>
         <label>Password:</label>
         {{ form.password }}
       </fieldset>
       <div class="form-actions">
         <input class="btn btn-primary" type="submit" value="Login"/>
-        <a class="btn btn-link" href="/register/">Click here to create an account.</a>
+        <a class="btn btn-link" href="/tutorhub/register/">Click here to create an account.</a>
   <input type="hidden" name="next" value="{{ next }}"/>
       </div>
     </form>
