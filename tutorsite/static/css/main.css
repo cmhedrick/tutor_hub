@@ -64,3 +64,10 @@ header {
 .left a, a:visited {
     text-decoration: none;
 }
+fieldset {
+    border: none;
+    padding-left: 0px;
+}
+input#id_password  {
+    margin-left: 7px;
+}
